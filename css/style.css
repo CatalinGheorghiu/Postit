@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    /* height: 100vh; */
+}
+
+#nav {
+    width: 40%;
+background-color: brown;
+}
+
+.nav-post {
+    display: flex;
+    flex-direction: column;
+}
+
+.post{
+    background-color: chartreuse;
+    border: 1px solid;
+    height: 150px;
+    width: 250px;
+    margin: 2rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Section Posted Card */
+#posted-card{
+    background-color: darkblue;
+    width: 100%;
+}
+.post-1{
+    text-align: center;
+    background-color: chartreuse;
+    border: 1px solid;
+    height: 150px;
+    width: 250px;
+    margin: 2rem;
+
+}
