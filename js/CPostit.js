@@ -4,18 +4,14 @@
 class Postit {
     x;
     y;
-    vitesse;
     couleur;
+    text;
 
-    constructor(x, y, vitesse, couleur) {
+    constructor(x, y, couleur, text) {
         this.x = x;
         this.y = y;
-        this.vitesse = vitesse;
         this.couleur = couleur;
-    }
-
-    changeVitesse(vitesse) {
-        this.vitesse = vitesse;
+        this.text = text;
     }
 
     changePlace(x, y) {
@@ -37,11 +33,12 @@ class Postit {
         monElem.style.backgroundColor = this.couleur;
         monElem.style.padding = "5px";
         monElem.style.color = "black";
-        monElem.innerHTML =
-            "Je suis un objet de test, j'avance à " + this.vitesse + " Vroum";
+        monElem.innerHTML = this.text;
         document.body.appendChild(monElem);
     }
 }
 
-monTest = new Postit(100, 200, 30, "red");
-monTest.afficheTest();
+monTest1 = new Postit(100, 200, "red", "Test 1");
+monTest2 = new Postit(300, 200, "green", "Test 2");
+monTest1.afficheTest();
+monTest2.afficheTest();
