@@ -2,21 +2,21 @@
 // $("#year").text(new Date().getFullYear());
 
 class Postit {
-    x;
-    y;
+    posX;
+    posY;
     couleur;
     text;
 
-    constructor(x, y, couleur, text) {
-        this.x = x;
-        this.y = y;
+    constructor(posX, posY, couleur, text) {
+        this.posX = posX;
+        this.posY = posY;
         this.couleur = couleur;
         this.text = text;
     }
 
     changePlace(x, y) {
-        this.x = x;
-        this.y = y;
+        this.posX = x;
+        this.posY = y;
     }
 
     changeCouleur(coul) {
@@ -24,18 +24,40 @@ class Postit {
     }
 
     afficheTest() {
-        let monElem = document.createElement("div");
-        monElem.className = "notes";
+        let monElem;
+        let creation = false;
+
+        if (document.getElementById('item') == null) {
+            monElem = document.createElement('div');
+            creation = true;
+        }
+        else {
+            monElem = document.getElementById('item');
+        }
+
+        monElem.className = "note";
+        monElem.id = "item";
+        // monElem.id = `div_${new Date().getTime().toString()}`;
         monElem.style.position = "fixed";
-        monElem.style.top = this.y + "px";
-        monElem.style.left = this.x + "px";
+        monElem.style.top = this.posY + "px";
+        monElem.style.left = this.posX + "px";
         monElem.style.width = "250px";
         monElem.style.height = "150px";
         monElem.style.backgroundColor = this.couleur;
         monElem.style.padding = "5px";
         monElem.style.color = "black";
-        monElem.innerHTML = ` <h3> ${this.text} </h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eligendi excepturi odio! Provident, saepe numquam?</p>`;
-        document.body.appendChild(monElem);
+        monElem.innerHTML = ` <h3> ${this.text} </h3><p>Add text</p>`;
+        // document.body.appendChild(monElem);
+
+        monElem.addEventListener('click', () => {
+            // console.log("on bouge !")
+            onBouge = true;
+        })
+
+        //Si ma voiture n'existe pas je l'ajoute au html
+        if (creation) {
+            document.body.appendChild(monElem);
+        }
     }
 }
 

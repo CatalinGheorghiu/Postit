@@ -16,8 +16,12 @@ h1 {
     color: #ffffff;
 }
 
-p{
+p {
     font-style: italic;
+}
+
+textarea {
+    background-color: red;
 }
 
 #nav {
@@ -46,12 +50,16 @@ p{
     background-color: yellow;
 }
 
-.notes {
+.note {
     border: 1px dotted;
     text-align: center;
+    touch-action: none;
+    user-select: none;
 }
 
-#posted-card {
+
+#target {
     width: 100%;
     background: #555555;
+    touch-action: none;
 }
