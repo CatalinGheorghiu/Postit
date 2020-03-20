@@ -28,7 +28,7 @@ class Postit {
         monElem.style.position = "fixed";
         monElem.style.top = this.y + "px";
         monElem.style.left = this.x + "px";
-        monElem.style.width = "150px";
+        monElem.style.width = "250px";
         monElem.style.height = "150px";
         monElem.style.backgroundColor = this.couleur;
         monElem.style.padding = "5px";
@@ -38,7 +38,14 @@ class Postit {
     }
 }
 
-monTest1 = new Postit(100, 200, "red", "Test 1");
-monTest2 = new Postit(300, 200, "green", "Test 2");
+monTest1 = new Postit(35, 100, "red", "Test 1");
+monTest2 = new Postit(35, 300, "green", "Test 2");
+monTest3 = new Postit(35, 500, "yellow", "Test 3");
+
+// const button = document.querySelector(".btn-add")
+// button.addEventListener("click", function(){
+
+// })
 monTest1.afficheTest();
 monTest2.afficheTest();
+monTest3.afficheTest();

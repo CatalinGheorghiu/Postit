@@ -6,11 +6,11 @@
 
 body{
     display: flex;
-    /* height: 100vh; */
+    height: 100vh;
 }
 
 #nav {
-    width: 40%;
+    width: 30%;
 background-color: brown;
 }
 
