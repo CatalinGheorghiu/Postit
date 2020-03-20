@@ -4,42 +4,54 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
     height: 100vh;
 }
 
+h1 {
+    /* text-align: center; */
+    margin: 0.75rem;
+    padding-left: 1.25rem;
+    color: #ffffff;
+}
+
+p{
+    font-style: italic;
+}
+
 #nav {
-    width: 30%;
-background-color: brown;
+    width: 30rem;
+    background-color: #333333;
 }
 
-.nav-post {
-    display: flex;
-    flex-direction: column;
-}
-
-.post{
-    background-color: chartreuse;
-    border: 1px solid;
-    height: 150px;
-    width: 250px;
+/* Static Posts */
+.post-1,
+.post-2,
+.post-3 {
+    width: 15rem;
+    height: 10rem;
     margin: 2rem;
-    padding: 1rem;
+    /* background-color: red; */
+}
+.post-1 {
+    background-color: red;
+}
+
+.post-2 {
+    background-color: green;
+}
+
+.post-3 {
+    background-color: yellow;
+}
+
+.notes {
+    border: 1px dotted;
     text-align: center;
 }
 
-/* Section Posted Card */
-#posted-card{
-    background-color: darkblue;
+#posted-card {
     width: 100%;
-}
-.post-1{
-    text-align: center;
-    background-color: chartreuse;
-    border: 1px solid;
-    height: 150px;
-    width: 250px;
-    margin: 2rem;
-
+    background: #555555;
 }
