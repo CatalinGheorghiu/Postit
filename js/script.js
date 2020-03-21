@@ -5,27 +5,26 @@ let y;
 const addRed = document.querySelector(".add-1");
 const addGreen = document.querySelector(".add-2");
 const addYellow = document.querySelector(".add-3");
+let move = document.querySelector(".fa-people-carry");
 
 /* Add Events */
 addRed.addEventListener("click", function() {
     // console.log("Hello Red");
+    monTest1 = new Postit(435, 100, "red", "Post ");
     monTest1.afficheTest();
     postIT.push(monTest1);
-    console.log(postIT);
 });
 
 addGreen.addEventListener("click", function() {
+    monTest2 = new Postit(435, 300, "green", "Post ");
     monTest2.afficheTest();
     postIT.push(monTest2);
-    console.log(postIT);
-    // console.log("Hello Green");
 });
 
 addYellow.addEventListener("click", function() {
+    monTest3 = new Postit(435, 500, "yellow", "Post");
     monTest3.afficheTest();
     postIT.push(monTest3);
-    console.log(postIT);
-    // console.log("Hello Yellow");
 });
 
 document.addEventListener("mousemove", e => {
@@ -43,7 +42,6 @@ function refresh() {
         monTest1.changePlace(x, y);
         monTest1.afficheTest();
     }
-    setTimeout(refresh, 100);
+    setTimeout(refresh, 10);
 }
-
 refresh();

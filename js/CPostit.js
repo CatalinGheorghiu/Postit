@@ -27,12 +27,11 @@ class Postit {
         let monElem;
         let creation = false;
 
-        if (document.getElementById('item') == null) {
-            monElem = document.createElement('div');
+        if (document.getElementById("item") == null) {
+            monElem = document.createElement("div");
             creation = true;
-        }
-        else {
-            monElem = document.getElementById('item');
+        } else {
+            monElem = document.getElementById("item");
         }
 
         monElem.className = "note";
@@ -44,27 +43,33 @@ class Postit {
         monElem.style.width = "250px";
         monElem.style.height = "150px";
         monElem.style.backgroundColor = this.couleur;
-        monElem.style.padding = "5px";
+        // monElem.style.padding = "5px";
         monElem.style.color = "black";
-        monElem.innerHTML = ` <h3> ${this.text} </h3><p>Add text</p>`;
-        // document.body.appendChild(monElem);
+        monElem.innerHTML = ` 
+        <div class="post-title">
+            <h3> ${this.text} </h3>
+        </div>
+        <div class="post-body">
+            <p>Add text</p> 
+        </div>
+        <div class="post-footer">
+            <i class="fas fa-people-carry move"></i>
+        </div>
+            
+            `;
 
-        monElem.addEventListener('click', () => {
-            // console.log("on bouge !")
-            onBouge = true;
-        })
+        // monElem.addEventListener("click", () => {
+        //     onBouge = true;
+        // });
 
-        //Si ma voiture n'existe pas je l'ajoute au html
         if (creation) {
             document.body.appendChild(monElem);
         }
+
+        /* Move the Postit */
+        document.querySelector(".move").addEventListener("click", function() {
+            // console.log("Hello");
+            onBouge = true;
+        });
     }
 }
-
-monTest1 = new Postit(435, 100, "red", "Post ");
-monTest2 = new Postit(435, 300, "green", "Post ");
-monTest3 = new Postit(435, 500, "yellow", "Post");
-
-// monTest1.afficheTest();
-// monTest2.afficheTest();
-// monTest3.afficheTest();
