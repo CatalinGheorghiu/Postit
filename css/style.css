@@ -49,6 +49,8 @@ p {
 .note {
     border: 1px dotted;
     text-align: center;
+    width: 15rem;
+    height: 10rem;
     /* resize: both;
     overflow: auto; */
 }

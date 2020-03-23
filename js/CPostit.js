@@ -25,7 +25,6 @@ class Postit {
 
     afficheTest() {
         let monElem;
-        let resizer;
         let creation = false;
 
         if (document.getElementById("item") == null) {
@@ -42,10 +41,7 @@ class Postit {
         monElem.style.position = "fixed";
         monElem.style.top = this.posY + "px";
         monElem.style.left = this.posX + "px";
-        monElem.style.width = "250px";
-        monElem.style.height = "150px";
         monElem.style.backgroundColor = this.couleur;
-        // monElem.style.padding = "5px";
         monElem.style.color = "black";
         monElem.innerHTML = ` 
         <div class="post-title">
@@ -57,7 +53,8 @@ class Postit {
         <div class="post-footer">
             <i class="fas fa-expand-arrows-alt move"></i>
             <i class="fas fa-compress-alt resize"></i>
-            <i class="fas fa-edit"></i>
+            <i class="fas fa-edit edit"></i>
+            <i class="fas fa-trash-alt del"></i>
         </div>   
             `;
 
@@ -70,12 +67,14 @@ class Postit {
         }
 
         /* Move  Postit ###################################################*/
-        document.querySelector(".move").addEventListener("mousedown", function() {
-            // console.log("Hello");
-            onBouge = true;
-        });
+        document
+            .querySelector(".move")
+            .addEventListener("mousedown", function() {
+                // console.log("Hello");
+                onBouge = true;
+            });
 
-        /* Resize  Postit*/
+        /* Resize  Postit ##################################################*/
         document
             .querySelector(".resize")
             .addEventListener("mousedown", initResize, false);
@@ -95,5 +94,23 @@ class Postit {
             window.removeEventListener("mousemove", Resize, false);
             window.removeEventListener("mouseup", stopResize, false);
         }
+
+        /* Delete Postit */
+        document.querySelector(".del").addEventListener("click", function() {
+            monElem.remove();
+        });
+
+        /* Edit Postit #####################################################*/
+        document.querySelector(".edit").addEventListener("click", function() {
+            let button = document.createElement("button");
+            button.innerHTML = "Confirm";
+            monElem.appendChild(button);
+            monElem.setAttribute("contenteditable", "true");
+
+            button.addEventListener("click", function() {
+                monElem.setAttribute("contenteditable", "false");
+                button.remove();
+            });
+        });
     }
 }
