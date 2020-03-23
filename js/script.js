@@ -6,8 +6,9 @@ const addRed = document.querySelector(".add-1");
 const addGreen = document.querySelector(".add-2");
 const addYellow = document.querySelector(".add-3");
 let move = document.querySelector(".fa-people-carry");
+let item = document.querySelector("#item")
 
-/* Add Events */
+/* Add Postit ############################################*/
 addRed.addEventListener("click", function() {
     // console.log("Hello Red");
     monTest1 = new Postit(435, 100, "red", "Post ");
@@ -27,6 +28,7 @@ addYellow.addEventListener("click", function() {
     postIT.push(monTest3);
 });
 
+/* Move event ########################################### */
 document.addEventListener("mousemove", e => {
     x = e.clientX;
     y = e.clientY;
@@ -45,3 +47,4 @@ function refresh() {
     setTimeout(refresh, 10);
 }
 refresh();
+

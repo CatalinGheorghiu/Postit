@@ -25,10 +25,12 @@ class Postit {
 
     afficheTest() {
         let monElem;
+        let resizer;
         let creation = false;
 
         if (document.getElementById("item") == null) {
             monElem = document.createElement("div");
+
             creation = true;
         } else {
             monElem = document.getElementById("item");
@@ -53,9 +55,10 @@ class Postit {
             <p>Add text</p> 
         </div>
         <div class="post-footer">
-            <i class="fas fa-people-carry move"></i>
-        </div>
-            
+            <i class="fas fa-expand-arrows-alt move"></i>
+            <i class="fas fa-compress-alt resize"></i>
+            <i class="fas fa-edit"></i>
+        </div>   
             `;
 
         // monElem.addEventListener("click", () => {
@@ -66,10 +69,31 @@ class Postit {
             document.body.appendChild(monElem);
         }
 
-        /* Move the Postit */
-        document.querySelector(".move").addEventListener("click", function() {
+        /* Move  Postit ###################################################*/
+        document.querySelector(".move").addEventListener("mousedown", function() {
             // console.log("Hello");
             onBouge = true;
         });
+
+        /* Resize  Postit*/
+        document
+            .querySelector(".resize")
+            .addEventListener("mousedown", initResize, false);
+
+        //Window funtion mousemove & mouseup
+        function initResize(e) {
+            window.addEventListener("mousemove", Resize, false);
+            window.addEventListener("mouseup", stopResize, false);
+        }
+        //resize the element
+        function Resize(e) {
+            monElem.style.width = e.clientX - monElem.offsetLeft + "px";
+            monElem.style.height = e.clientY - monElem.offsetTop + "px";
+        }
+        //on mouseup remove windows functions mousemove & mouseup
+        function stopResize(e) {
+            window.removeEventListener("mousemove", Resize, false);
+            window.removeEventListener("mouseup", stopResize, false);
+        }
     }
 }
