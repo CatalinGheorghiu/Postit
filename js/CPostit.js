@@ -98,6 +98,7 @@ class Postit {
         /* Delete Postit */
         document.querySelector(".del").addEventListener("click", function() {
             monElem.remove();
+            delPost();
         });
 
         /* Edit Postit #####################################################*/

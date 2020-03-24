@@ -1,5 +1,5 @@
 let onBouge = false;
-let postIT = [];
+let postIT = new Array();
 let x;
 let y;
 const addRed = document.querySelector(".add-1");
@@ -49,4 +49,9 @@ function refresh() {
 }
 refresh();
 
+
+
+function delPost() {
+    postIT.pop(monTest1);
+}
 
