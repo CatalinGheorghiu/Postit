@@ -1,0 +1,23 @@
+{
+    "name": "Postit",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "doc": "jsdoc -c jsdoc.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CatalinGheorghiu/Postit.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/CatalinGheorghiu/Postit/issues"
+    },
+    "homepage": "https://github.com/CatalinGheorghiu/Postit#readme",
+    "devDependencies": {
+        "jsdoc": "^3.6.3"
+    }
+}
