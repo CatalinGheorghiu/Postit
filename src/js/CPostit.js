@@ -76,6 +76,8 @@ class Postit {
             .querySelector(".move")
             .addEventListener("mousedown", function() {
                 // console.log("Hello");
+                current = this.numPostit;
+                console.log(current);
                 onBouge = true;
             });
 
